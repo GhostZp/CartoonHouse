@@ -1,0 +1,78 @@
+:root {
+    --pinkbg: #ffcad9;
+    --pinkhvr: #ffe3e9;
+    --beigebg: #fcf1cf;
+    --darkpink: #d14c72;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Basic structure */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--beigebg);
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer";
+    row-gap: 20px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--pinkbg);
+
+}
+
+.logo {
+    display: flex;
+}
+
+.headerLogo {
+    margin: 15px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+header h1 {
+    color: white;
+    margin-top: 27px;
+    -webkit-text-stroke: 1.2px var(--darkpink);
+    text-decoration: underline overline dotted;
+}
+
+.headbtn-group {
+    display: flex;
+}
+
+.headbtn {
+    padding: 10px;
+}
+
+.tab-container {
+    grid-area: nav;
+}
+
+.tab-content {
+    grid-area: main;
+    margin-top: 20px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--pinkbg);
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 4px solid var(--darkpink);
+}
