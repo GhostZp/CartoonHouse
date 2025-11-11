@@ -17,7 +17,7 @@
     transition: background-color 0.3s ease;
     height: 70px;
     width: 170px;
-    
+    transition: all 0.2s;
 }
 
 .cart-button:hover {
@@ -25,6 +25,10 @@
     background-color: var(--pinkhvr);
     color: var(--darkpink);
     border-color: var(--darkpink);
+}
+
+.cart-button:active {
+    transform: scale(0.9);
 }
 
 /* Product listing */
