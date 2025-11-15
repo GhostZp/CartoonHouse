@@ -72,6 +72,23 @@ dialog.cart[open] {
     -webkit-text-stroke: 1.2px var(--darkpink);
 }
 
+#trashAll {
+    background-color: var(--darkpink);
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--darkpink);
+}
+
+#trashAll:hover {
+    background-color: var(--pinkhvr);
+    color: var(--darkpink);
+    cursor: pointer;
+}
+
 /* Product information in cart */
 .unit-count {
     display: grid;
@@ -107,20 +124,34 @@ dialog.cart[open] {
     color: var(--darkpink);
 }
 
+/* The row of cart item */
 .cart-item {
     display: grid;
     word-break: break-word;
-    grid-template-columns: 120px 100px 1fr 1fr;
+    grid-template-columns: 120px 100px 1fr 1fr 30px;
     align-items: center;
     text-align: center;
-    padding: 5px;
     background-color: var(--pinkbg);
     border-radius: 8px;
     border-width: 3px;
     border-style: solid;
     border-color: var(--darkpink);
+    column-gap: 0;
 }
 
+.cart-item >div:nth-child(5) {
+    height: 100%;
+    width: 100%;
+    background-color: var(--darkpink);
+    align-content: center;
+}
+
+.cart-item >div:nth-child(5):hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Carts items area */
 .cart-items::-webkit-scrollbar {
     display: none;
 }
@@ -183,8 +214,4 @@ dialog.cart[open] {
 
 .check-out-button:hover {
     background-color: var(--pinkhvr);
-}
-
-#trash {
-    cursor: pointer;
 }

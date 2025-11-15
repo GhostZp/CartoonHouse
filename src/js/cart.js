@@ -5,6 +5,7 @@ let cart = [];
 function updateCart() {
   renderCartItems();
   renderTotal();
+  console.log(cart);
 }
 
 function renderCartItems() {
@@ -27,6 +28,9 @@ function renderCartItems() {
                     <span class="unit-counter">${item.units}</span>
                     <span class="button-minus" onclick="changeUnitAmount('minus', '${item.id}')">-</span>
                 </div>
+                <div onclick="deleteItem('${item.id}')">
+                  <img src="../icons/trashcan.png">
+                </div>
             </div>
         `;
   });
@@ -41,7 +45,7 @@ function changeUnitAmount(action, id) {
       if (item.id === id) {
         if (action === "minus") {
           if (units === 1) {
-            return null; // Remove item from cart
+            return null; // Returns null for items to be removed
           } else {
             units--;
           }
@@ -55,7 +59,19 @@ function changeUnitAmount(action, id) {
       }
       return item;
     })
-    .filter(Boolean);
+    .filter(Boolean); // Remove items that are null
+  updateCart();
+}
+
+// Delete the item
+function deleteItem(id) {
+  cart = cart.filter((item) => item.id !== id);
+  updateCart();
+}
+
+// Empty your cart
+function emptyCart() {
+  cart = [];
   updateCart();
 }
 

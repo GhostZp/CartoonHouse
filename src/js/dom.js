@@ -20,14 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cartModal.classList.remove("slide-in");
     cartModal.classList.add("slide-out");
   });
-
-  // Empty your cart
-  document.getElementById("trash").addEventListener("click", () => {
-    const cartItems = document.querySelector(".cart-items");
-    const subTotal = document.querySelector(".total-price");
-    cartItems.innerHTML = ""; // Clear cart
-    subTotal.innerHTML = "0 €";
-  });
 });
 
 // Opens Appetizers tab when site loads
