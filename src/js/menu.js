@@ -1,9 +1,9 @@
 // Render products to main body
 function renderProducts(products, categoryId) {
-    const productsContainer = document.querySelector(`#${categoryId} .products`);
-    productsContainer.innerHTML = '';
+  const productsContainer = document.querySelector(`#${categoryId} .products`);
+  productsContainer.innerHTML = "";
 
-    products.forEach(item => {
+  products.forEach((item) => {
     const productHTML = `
         <div class="item">
             <div class="item-container">
@@ -22,35 +22,34 @@ function renderProducts(products, categoryId) {
         </div>
     `;
     productsContainer.innerHTML += productHTML;
-    });
+  });
 }
 
 // Add products to shopping cart
 function addToCart(id) {
-    if (cart.some(item => item.id === id)) {
-        console.log('Item already in cart.');
-        changeUnitAmount('plus', id);
-    } else {
-        // Search through all item sets
-        const itemSets = [appetizers, main_dishes, desserts, drinks];
-        let item = null;
+  if (cart.some((item) => item.id === id)) {
+    /*         console.log('Item already in cart.'); */
+    changeUnitAmount("plus", id);
+  } else {
+    // Search through all item sets
+    const itemSets = [appetizers, main_dishes, desserts, drinks];
+    let item = null;
 
-        for (const set of itemSets) {
-            item = set.find(p => p.id === id);
-            if (item) break; // stop searching once found
-        }
-
-        if (item) {
-            cart.push({ ...item, units: 1 });
-            console.log('Added item to cart:', cart);
-        } else {
-            console.warn('Item not found:', id);
-        }
+    for (const set of itemSets) {
+      item = set.find((p) => p.id === id);
+      if (item) break; // stop searching once found
     }
 
-    updateCart();
-}
+    if (item) {
+      cart.push({ ...item, units: 1 });
+      console.log("Added item to cart:", cart);
+    } else {
+      console.warn("Item not found:", id);
+    }
+  }
 
+  updateCart();
+}
 
 // Tabs script
 function openMenu(evt, menuName) {

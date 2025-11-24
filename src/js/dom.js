@@ -20,6 +20,35 @@ document.addEventListener("DOMContentLoaded", () => {
     cartModal.classList.remove("slide-in");
     cartModal.classList.add("slide-out");
   });
+
+  //logInForm and its opening and closing functions
+  const loginBtn = document.getElementById("log-in");
+  const loginForm = document.getElementById("loginForm");
+  const cancelBtn = document.getElementById("cancelBtn");
+
+  // Open form
+  loginBtn.addEventListener("click", () => {
+    loginForm.style.display = "block";
+  });
+  // Close form
+  cancelBtn.addEventListener("click", () => {
+    loginForm.style.display = "none";
+  });
+
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const validUsername = "Patric";
+    const validPassword = "Kala";
+
+    if (username === validUsername && password === validPassword) {
+      window.location.href = "http://127.0.0.1:5501/src/pages/admin.html";
+    } else {
+      console.log("Virheelliset tunnukset");
+    }
+  });
 });
 
 // Opens Appetizers tab when site loads

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/login.css">
     <script src="../js/cart.js"></script>
     <script src="../js/dom.js"></script>
     <script src="../js/products.js"></script>
@@ -30,6 +31,19 @@
         </div>
     </div>
 </header>
+
+<form class="logIn" id="loginForm">
+    <div class="logIn-Container">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div class="loginButtons">
+            <button type="submit" class="button">Log In</button>
+            <button type="button" class="button" id="cancelBtn">Cancel</button>
+        </div>
+    </div>
+</form>
 
 <div class="tab-container">
     <div class="tab">
@@ -92,7 +106,7 @@
 
     <div class="cart-footter">
         <button class="close-button">Close</button>
-        <button class="check-out-button">Check out</button>
+        <button class="check-out-button" onclick="checkOut()">Check out</button>
     </div>
 </dialog>
 

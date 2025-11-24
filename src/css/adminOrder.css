@@ -1,0 +1,7 @@
+body {
+    display: grid;
+    grid-area: 
+    header header,
+    pending ready;
+    color: white;
+}

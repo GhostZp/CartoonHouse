@@ -5,7 +5,6 @@ let cart = [];
 function updateCart() {
   renderCartItems();
   renderTotal();
-  console.log(cart);
 }
 
 function renderCartItems() {
@@ -84,4 +83,15 @@ function renderTotal() {
     totalPrice += item.price * item.units;
   });
   subTotal.innerHTML = `${totalPrice} €`;
+}
+
+// Check out saves order to local storage
+function checkOut() {
+  // Checks if there already exists order list and creates new if needed
+  let orders = JSON.parse(localStorage.getItem("cart-items")) || [];
+  // Adds new order to the list
+  orders.push([...cart]);
+
+  localStorage.setItem("cart-items", JSON.stringify(orders));
+  emptyCart();
 }

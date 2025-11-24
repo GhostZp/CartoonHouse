@@ -1,0 +1,25 @@
+#loginForm {
+    display: none; /* piilotettu aluksi */
+    position: absolute; /* voit säätää sijainnin */
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--pinkbg);
+    padding: 20px;
+    border: 2px solid var(--darkpink);
+    z-index: 1000;
+    border-radius: 20px;
+}
+
+.logIn-Container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    background-color: pink;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: var(--darkpink);
+}
