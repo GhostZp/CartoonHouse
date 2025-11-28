@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="icon" type="image/x-icon" href="../img/Cartoonhouse_pink.ico" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          class="headerLogo"
+          src="../img/Cartoonhouse_pink.png"
+          alt="Logo"
+          width="60px"
+          height="60px"
+        />
+        <h1>Cartoon House</h1>
+      </div>
+
+      <div class="headbtn-group">
+        <a href="home.html"><button id="home-btn">Home</button></a>
+        <button class="cart-button" id="open-cart">To cart</button>
+        <button id="log-in">Log in</button>
+      </div>
+    </header>
+
+    <form class="logIn" id="loginForm">
+      <div class="logIn-Container">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <div class="loginButtons">
+          <button type="submit" class="button">Log In</button>
+          <button type="button" class="button" id="cancelBtn">Cancel</button>
+        </div>
+      </div>
+    </form>
+
+    <main>
+      <div class="tab-container">
+        <div class="tab">
+          <button class="tablinks active" data-target="Appetizers">
+            Appetizers
+          </button>
+          <button class="tablinks" data-target="Main_dishes">
+            Main dishes
+          </button>
+          <button class="tablinks" data-target="Desserts">Desserts</button>
+          <button class="tablinks" data-target="Drinks">Drinks</button>
+        </div>
+
+        <div class="category">
+          <section id="Appetizers" class="tabcontent active">
+            <div class="list-of-products">
+              <div class="products"><!-- Items injected here --></div>
+            </div>
+          </section>
+
+          <section id="Main_dishes" class="tabcontent">
+            <div class="list-of-products">
+              <div class="products"></div>
+            </div>
+          </section>
+
+          <section id="Desserts" class="tabcontent">
+            <div class="list-of-products">
+              <div class="products"></div>
+            </div>
+          </section>
+
+          <section id="Drinks" class="tabcontent">
+            <div class="list-of-products">
+              <div class="products"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <dialog class="cart" id="cart">
+        <div class="cart-header">
+          <img
+            class="headerLogo"
+            src="../img/Cartoonhouse_pink.ico"
+            alt="Icon"
+          />
+          <h2>Shopping cart</h2>
+          <div id="trash">
+            <img src="../icons/trashcan.png" />
+          </div>
+        </div>
+
+        <div class="cart-items">
+          <!-- Render items in the cart -->
+        </div>
+
+        <div class="total">
+          <div>Total:</div>
+          <div class="total-price">0 €</div>
+        </div>
+
+        <div class="cart-footter">
+          <button class="close-button">Close</button>
+          <button
+            class="check-out-button"
+            onclick="window.location.href='checkout.html'"
+          >
+            Check out
+          </button>
+        </div>
+      </dialog>
+    </main>
+
+    <footer>
+      <h2>Cartoon House</h2>
+    </footer>
+
+    <script src="../js/cart.js"></script>
+    <script src="../js/dom.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/menu.js"></script>
+  </body>
+</html>

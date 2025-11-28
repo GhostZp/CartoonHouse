@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    background-color: rgb(36, 45, 45);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    background-color: rgb(26, 65, 66);
+}
+
+header h1 {
+    margin-left: 2%;
+    text-decoration: underline overline dotted;
+}
+
+ul {
+    display: flex;
+    gap: 15px;
+    margin-right: 5%;
+    list-style: none;
+}
+
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
