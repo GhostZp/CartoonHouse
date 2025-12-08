@@ -1,3 +1,24 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "sshOptions": {
+        "port": 22
+      },
+      "driver": "MySQL",
+      "name": "CartoonHouse",
+      "database": "CartoonHouse",
+      "username": "root",
+      "password": "K4rhuKu0l131l3n",
+      "connectionTimeout": 30
+    }
+  ]
 }

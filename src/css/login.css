@@ -1,4 +1,4 @@
-#loginForm {
+#loginForm, #registerForm {
     display: none; /* piilotettu aluksi */
     position: absolute; /* voit säätää sijainnin */
     top: 100px;

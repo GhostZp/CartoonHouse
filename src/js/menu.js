@@ -1,9 +1,9 @@
 // Render products to main body
 function renderProducts(products, categoryId) {
-  const productsContainer = document.querySelector(`#${categoryId} .products`);
-  productsContainer.innerHTML = "";
+    const productsContainer = document.querySelector(`#${categoryId} .products`);
+    productsContainer.innerHTML = '';
 
-  products.forEach((item) => {
+    products.forEach(item => {
     const productHTML = `
         <div class="item">
             <div class="item-container">
@@ -15,53 +15,57 @@ function renderProducts(products, categoryId) {
                     <p>${item.price.toFixed(2)} €</p>
                     <p>${item.allergens}</p>
                 </div>
-                <div class="add-to-cart" onclick="addToCart('${item.id}')">
-                    <p>Add to cart</p>
-                </div>
+                <div class="add-to-cart" onclick="addToCart('${item.id}')">Add to cart</div>
             </div>
         </div>
     `;
     productsContainer.innerHTML += productHTML;
-  });
+    });
 }
 
 // Add products to shopping cart
 function addToCart(id) {
-  if (cart.some((item) => item.id === id)) {
-    /*         console.log('Item already in cart.'); */
-    changeUnitAmount("plus", id);
-  } else {
-    // Search through all item sets
-    const itemSets = [appetizers, main_dishes, desserts, drinks];
-    let item = null;
-
-    for (const set of itemSets) {
-      item = set.find((p) => p.id === id);
-      if (item) break; // stop searching once found
-    }
-
-    if (item) {
-      cart.push({ ...item, units: 1 });
-      console.log("Added item to cart:", cart);
+    if (cart.some(item => item.id === id)) {
+        console.log('Item already in cart.');
+        changeUnitAmount('plus', id);
     } else {
-      console.warn("Item not found:", id);
-    }
-  }
+        // Search through all item sets
+        const itemSets = [appetizers, main_dishes, desserts, drinks];
+        let item = null;
 
-  updateCart();
+        for (const set of itemSets) {
+            item = set.find(p => p.id === id);
+            if (item) break; // stop searching once found
+        }
+
+        if (item) {
+            cart.push({ ...item, units: 1 });
+            console.log('Added item to cart:', cart);
+        } else {
+            console.warn('Item not found:', id);
+        }
+    }
+
+    updateCart();
 }
+
 
 // Tabs script
-function openMenu(evt, menuName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+const tabs = document.querySelectorAll(".tablinks");
+const contents = document.querySelectorAll(".tabcontent");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", function () {
+    const menuName = this.dataset.target;
+
+    // Hide all tabcontent
+    contents.forEach(c => c.style.display = "none");
+
+    // Remove active class
+    tabs.forEach(t => t.classList.remove("active"));
+
+    // Show selected
+    document.getElementById(menuName).style.display = "block";
+    this.classList.add("active");
+  });
+});

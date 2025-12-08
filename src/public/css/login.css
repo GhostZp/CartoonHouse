@@ -1,0 +1,38 @@
+/* Login and Register css */
+dialog.modal {
+    padding: 0;
+    border: none;
+    border-radius: 18px;
+    background: var(--pinkbg);
+    width: 320px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Dim background when modal is open */
+dialog::backdrop {
+    background: rgba(0,0,0,0.4);
+}
+
+/* Inner container */
+.modal-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--darkpink);
+}
+
+/* Buttons */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.button {
+    background-color: pink;
+    border-radius: 20px;
+    border: 2px solid var(--darkpink);
+    padding: 8px 12px;
+    cursor: pointer;
+}

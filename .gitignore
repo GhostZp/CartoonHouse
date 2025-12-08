@@ -2,3 +2,5 @@ cart/
 cartDialog/
 menu/
 .vscode/
+CartoonHouse.session.sql
+.env

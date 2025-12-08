@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -31,18 +31,23 @@
       </div>
     </header>
 
-    <form class="logIn" id="loginForm">
-      <div class="logIn-Container">
+    <!-- Login dialog -->
+    <dialog class="modal" id="loginDialog">
+      <form method="dialog" class="modal-container">
+        <h2>Log In</h2>
+
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+        <input type="text" id="username" required />
+
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <div class="loginButtons">
-          <button type="submit" class="button">Log In</button>
-          <button type="button" class="button" id="cancelBtn">Cancel</button>
+        <input type="password" id="password" required />
+
+        <div class="modal-buttons">
+          <button id="loginSubmit" class="button">Log In</button>
+          <button id="cancelLogin" class="button" value="cancel">Cancel</button>
         </div>
-      </div>
-    </form>
+      </form>
+    </dialog>
 
     <main>
       <div class="tab-container">
@@ -124,7 +129,7 @@
 
     <script src="../js/cart.js"></script>
     <script src="../js/dom.js"></script>
-    <script src="../js/products.js"></script>
-    <script src="../js/menu.js"></script>
+    <script src="../js/menusections.js"></script>
+    <script src="../js/frontmenu.js"></script>
   </body>
 </html>
