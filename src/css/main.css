@@ -3,7 +3,81 @@
   --pinkhvr: #ffe3e9;
   --beigebg: #fcf1cf;
   --darkpink: #d14c72;
+  --textcolor: #000;
+  --icon: #f39c12;
+  --ball:
 }
+
+
+.dark {
+  --pinkbg: #2a1a1f;       /* Dark background with a pinkish tone */
+  --pinkhvr: #3a252c;      /* Slightly lighter hover background */
+  --beigebg: #1e1b16;      /* Dark beige-like background */
+  --darkpink: #ffcad9;     /* Light pink for accents (inverse of original) */
+  --textcolor: #f5f5f5;    /* Light text for dark backgrounds */
+  --icon: #f1c40f;
+}
+
+.theme-toggle {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+.checkbox {
+	/* opacity: 10; */
+	position: absolute;
+}
+
+.checkbox-label {
+  /* background-color: var(--pinkbg); */
+  background-color: var(--darkpink);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: var(--icon);
+}
+
+.fa-sun {
+  color: var(--icon);
+}
+
+.checkbox-label .ball {
+  background-color: var(--pinkbg);
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+
+body {
+  background-color: var(--pinkbg);
+  color: var(--textcolor);
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+.item, .menu-item, .menu-item-img img {
+  transition: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease;
+}
+
+
 
 * {
   box-sizing: border-box;
@@ -52,6 +126,11 @@ header {
   background-color: white;
   border-radius: 50%;
   padding: 3px;
+}
+
+/* Prevent transitions on first render */
+.no-transition * {
+    transition: none !important;
 }
 
 header h1 {
@@ -106,6 +185,8 @@ header h1 {
   transform: scale(1.1);
   background-color: var(--pinkhvr);
 }
+
+
 
 .cart-button:active,
 #log-in:active {
