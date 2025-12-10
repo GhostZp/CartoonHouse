@@ -1,0 +1,55 @@
+# Testing http requests with Visual Studio Code REST Client extension
+
+###########################
+## Users resource endpoints
+
+### get all users
+GET http://localhost:5501/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imt1a2tha2FhbGkiLCJwYXNzd29yZCI6IiQyYiQxMCRXTm1VaVB3MnA5TXhtbXY5YUdNbHhPb0FiTzl2RGdsRjc0YUQvSnRROFU3TjlxY0RXSmkvZSIsImVtYWlsIjoia3Vra2FrYWFsaUBleGFtcGxlLmNvbSIsImNyZWF0ZWRfYXQiOiIyMDI1LTEyLTA1VDA5OjM4OjE2LjAwMFoiLCJ1c2VyX2xldmVsX2lkIjoyLCJpYXQiOjE3NjQ5Mjc1ODgsImV4cCI6MTc2NTAxMzk4OH0.QJ0pP4ZCfMj8xrcy4_5X-SRtNt0sV41NDYv0154SYss
+
+
+
+### get user by id
+GET http://localhost:5501/api/users/3
+
+### create a new user (user registration)
+POST http://localhost:5501/api/users
+content-type: application/json
+
+{
+  "username": "kukkakaali",
+  "password": "kukkakaali",
+  "email": "kukkakaali@example.com",
+  "user_level_id": "2"
+}
+
+### modify an existing user by id
+PUT http://localhost:5501/api/users/8
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imt1a2tha2FhbGkiLCJwYXNzd29yZCI6IiQyYiQxMCRXTm1VaVB3MnA5TXhtbXY5YUdNbHhPb0FiTzl2RGdsRjc0YUQvSnRROFU3TjlxY0RXSmkvZSIsImVtYWlsIjoia3Vra2FrYWFsaUBleGFtcGxlLmNvbSIsImNyZWF0ZWRfYXQiOiIyMDI1LTEyLTA1VDA5OjM4OjE2LjAwMFoiLCJ1c2VyX2xldmVsX2lkIjoyLCJpYXQiOjE3NjQ5Mjc1ODgsImV4cCI6MTc2NTAxMzk4OH0.QJ0pP4ZCfMj8xrcy4_5X-SRtNt0sV41NDYv0154SYss
+
+{
+  "username": "editedname",
+  "email": "editedmail@example.com"
+}
+
+### delete a user (by id)
+DELETE http://localhost:5501/api/users/6
+
+
+
+
+### user login
+POST http://localhost:5501/api/auth/login
+content-type: application/json
+
+{
+  "username": "kukkakaali",
+  "password": "kukkakaali"
+}
+
+### USER INFO
+
+### get my user info
+GET http://localhost:5501/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imt1a2tha2FhbGkiLCJwYXNzd29yZCI6IiQyYiQxMCRXTm1VaVB3MnA5TXhtbXY5YUdNbHhPb0FiTzl2RGdsRjc0YUQvSnRROFU3TjlxY0RXSmkvZSIsImVtYWlsIjoia3Vra2FrYWFsaUBleGFtcGxlLmNvbSIsImNyZWF0ZWRfYXQiOiIyMDI1LTEyLTA1VDA5OjM4OjE2LjAwMFoiLCJ1c2VyX2xldmVsX2lkIjoyLCJpYXQiOjE3NjQ5Mjc1ODgsImV4cCI6MTc2NTAxMzk4OH0.QJ0pP4ZCfMj8xrcy4_5X-SRtNt0sV41NDYv0154SYss

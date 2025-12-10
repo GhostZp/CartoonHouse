@@ -1,0 +1,67 @@
+.describe h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* ===== Text Sections ===== */
+.greeting,
+.daily-menu,
+.membership {
+  color: var(--darkpink);
+  text-align: center;
+  font-size: larger;
+  width: 50%;
+  margin: auto;
+}
+
+/* ===== Deals ===== */
+.item {
+  width: 250px;
+  min-height: 250px;
+  box-sizing: border-box;
+
+  border-radius: 14px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: var(--pinkbg);
+  border: 4px solid var(--darkpink);
+  color: var(--darkpink);
+}
+
+.menu-item-img img {
+  width: 70%;
+  border: 4px solid var(--darkpink);
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 12px var(--pinkhvr));
+}
+
+.describe {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.describe h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.deal-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.original-price {
+  text-decoration: line-through;     
+  text-decoration-style: solid;     
+  color: red;                       
+  margin-right: 5px;
+}
