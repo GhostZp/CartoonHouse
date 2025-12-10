@@ -40,5 +40,5 @@ Html/CSS
 - Proper login
 
 # Code credits
-1. Anna Kallio - coded the menu, registration and home
-2. Patric Varis - coded the admin side, shopping cart, 
+1. Anna Kallio - coded the menu, registration/login and home
+2. Patric Varis - coded the admin side, shopping cart
